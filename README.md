@@ -1,4 +1,4 @@
-phalcon-pjax
+Phalcon PJAX
 ============
 
-Test project to experiment with Phalcon and jQuery PJAX.
+A demo project to test out the idea of using Phalcon with jQuery PJAX.
