@@ -18,3 +18,12 @@ page request, or a PJAX-based request.
 
 Anyhow - This project will be improved upon as I try to work out the best architecture for pain-free 
 apps using Phalcon and PJAX.
+
+
+To Do
+=====
+
+- Integrate the PJAX checking into the base controller, allowing all actions 
+to function out of the box without being aware of if a request is PJAX or not.
+- Figure out an elegant way to allow hard refreshes if the new page will utilize 
+any different templates / layouts.
