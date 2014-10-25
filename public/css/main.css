@@ -1,0 +1,39 @@
+* {
+	box-sizing: border-box;
+}
+
+h4 {
+	margin-top: 5px;
+}
+
+.clear {
+	clear: both;
+}
+
+#wrap {
+	width: 800px;
+	margin: 25px auto 50px auto;
+}
+
+#header {
+	margin-bottom: 10px;
+}
+
+#left-col {
+	float: left;
+	width: 195px;
+	border: solid grey 1px;
+}
+
+#right-col {
+	float: right;
+	width: 595px;
+	border: solid grey 1px;
+	min-height: 250px;
+	padding: 10px;
+}
+
+#footer {
+	text-align: center;
+	margin-top: 10px;
+}

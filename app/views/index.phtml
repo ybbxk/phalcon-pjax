@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Phlacon + PJAX Experiment</title>
+		
+		<link rel="stylesheet" href="/css/main.css">
+	</head>
+	<body>
+		
+		<div id="wrap">
+			<div id="header">
+				<h1>Phalcon & PJAX Experiment</h1>
+			</div>
+			<div id="cols">
+				<div id="left-col">
+					<ul>
+						<li><a href="/index">Index</a></li>
+						<li><a href="/index/page2">Page 2</a></li>
+						<li><a href="/index/page3">Page 3</a></li>
+					</ul>	
+				</div>
+				<div id="right-col">
+					<?= $this->getContent() ?>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div id="footer">
+				Time On Page: 0s
+			</div>
+		</div>
+		<script src="/js/jquery-1.11.1.min.js"></script>
+		<script src="/js/jquery.pjax.js"></script>
+		<script>
+			
+			$(document).ready(function() {
+				
+				$(document).pjax('a', '#right-col');
+				
+				var time_on_page = 0;
+				
+				setInterval(function() {
+					
+					time_on_page++;
+					
+					$('#footer').html('Time On Page: ' + time_on_page + 's')
+					
+				}, 1000);
+				
+			});
+			
+		</script>
+	</body>
+</html>
