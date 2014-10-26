@@ -27,3 +27,4 @@ To Do
 to function out of the box without being aware of if a request is PJAX or not.
 - Figure out an elegant way to allow hard refreshes if the new page will utilize 
 any different templates / layouts.
+- Investigate the effect of using Phalcon to forward controllers or redirect the page.
