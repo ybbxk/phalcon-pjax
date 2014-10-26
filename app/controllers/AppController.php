@@ -11,7 +11,21 @@ class AppController extends Controller {
 	public function beforeExecuteRoute() {
 		if($_SERVER["HTTP_X_PJAX"]) {
 			$this->is_pjax = true;
+			$this->prepareForPjax();
 		}
+	}
+	
+	/**
+	 * Takes care of any preparation needed to respond to a pjax request.
+	 * Note: I don't know if this carries over if a controller is forwarded?
+	 * 
+	 * @return void
+	 */
+	private function prepareForPjax() {
+		$this->view->disableLevel([
+			\Phalcon\Mvc\View::LEVEL_LAYOUT => true,
+			\Phalcon\Mvc\View::LEVEL_MAIN_LAYOUT => true
+		]);
 	}
 	
 	/**
