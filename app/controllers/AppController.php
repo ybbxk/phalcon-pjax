@@ -19,6 +19,7 @@ class AppController extends Controller {
 		// This would allow more flexibility??
 		if($_SERVER["HTTP_X_PJAX"]) {
 			$this->is_pjax = true;
+			$this->prepareForPjax();
 		}
 	}
 	
@@ -29,9 +30,6 @@ class AppController extends Controller {
 	 * @return void
 	 */
 	private function prepareForPjax() {
-		
-		$this->prepareForPjax();
-		
 		$this->view->disableLevel([
 			\Phalcon\Mvc\View::LEVEL_LAYOUT => true,
 			\Phalcon\Mvc\View::LEVEL_MAIN_LAYOUT => true
