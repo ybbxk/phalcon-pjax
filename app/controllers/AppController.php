@@ -7,6 +7,7 @@ class AppController extends Controller {
 	// Private and immutable, as you can't change the fact 
 	// that the request is pjax.
 	private $is_pjax = false;
+	public $render_pjax = false;
 	
 	public function beforeExecuteRoute() {
 		
@@ -17,9 +18,9 @@ class AppController extends Controller {
 		// Then, offer a method to change that flag and use the event manager
 		// to do any view disabling and such right before the view takes over...
 		// This would allow more flexibility??
-		if($_SERVER["HTTP_X_PJAX"]) {
+		if(isset($_SERVER["HTTP_X_PJAX"])) {
 			$this->is_pjax = true;
-			$this->prepareForPjax();
+			$this->render_pjax = true;
 		}
 	}
 	
@@ -29,7 +30,7 @@ class AppController extends Controller {
 	 * 
 	 * @return void
 	 */
-	private function prepareForPjax() {
+	public function prepareForPjax() {
 		$this->view->disableLevel([
 			\Phalcon\Mvc\View::LEVEL_LAYOUT => true,
 			\Phalcon\Mvc\View::LEVEL_MAIN_LAYOUT => true
@@ -43,5 +44,9 @@ class AppController extends Controller {
 	 */
 	public function isPjax() {
 		return $this->is_pjax;
+	}
+	
+	public function moo() {
+		echo 'MOOOOOOOO';
 	}
 }
