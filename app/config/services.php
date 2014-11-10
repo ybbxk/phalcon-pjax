@@ -53,13 +53,8 @@ $di->set('view', function() use ($di) {
 			$controller = $di->getShared('dispatcher')->getActiveController();
 
 			if($controller->isPjax() && $controller->render_pjax === true) {
-				echo 'RENDERING PJAX.';
 				$controller->prepareForPjax();
 			}
-			else {
-				echo 'RENDERING NORMAL RESPONSE.';
-			}
-
 		}
 	});
 
