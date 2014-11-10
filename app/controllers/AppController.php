@@ -45,8 +45,4 @@ class AppController extends Controller {
 	public function isPjax() {
 		return $this->is_pjax;
 	}
-	
-	public function moo() {
-		echo 'MOOOOOOOO';
-	}
 }
