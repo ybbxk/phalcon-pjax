@@ -1,14 +1,4 @@
 <?php
-/**
- * Sets up common services for use in the site.
- * 
- * Current includes:
- * - Base url
- * - Volt and PHP-based views.
- * - Session.
- * - Session flash messages.
- * - Database.
- */
 
 // Create a DI.
 $di = new \Phalcon\DI\FactoryDefault();
