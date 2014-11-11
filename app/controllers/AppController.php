@@ -45,4 +45,12 @@ class AppController extends Controller {
 	public function isPjax() {
 		return $this->is_pjax;
 	}
+	
+	// The only downside to using this is that child classes
+	// MUST remember to call the parent method.
+	public function afterExecuteRoute() {
+		if($this->isPjax() && $this->render_pjax === true) {
+			$this->prepareForPjax();
+		}
+	}
 }

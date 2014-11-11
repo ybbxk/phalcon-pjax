@@ -9,6 +9,9 @@ class IndexController extends AppController {
 		else {
 			$this->view->setVar('loaded_by', 'Normal Request');
 		}
+		
+		// Uncommenting this will force a hard reload in this action.
+		// $this->render_pjax = false;
 	}
 	
 	public function page2Action() {
